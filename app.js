@@ -8,11 +8,15 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local');
 var mongoose = require('mongoose');
 
+var user = require('./models/User');
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var posting = require('./routes/posting');
 var register = require('./routes/register');
 var login = require('./routes/login');
+var home = require('./routes/home');
+
 
 var app = express();
 var router = express.Router();
@@ -59,6 +63,7 @@ app.use('/users', users);
 app.use('/posting', posting);
 app.use('/register', register);
 app.use('/login', login);
+app.use('/home', home);
 
 // logging out
 app.get('/logout', function(req,res){

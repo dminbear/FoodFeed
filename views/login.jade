@@ -8,11 +8,12 @@ block content
 
     br
     br
-    p Have an account? Log in to FoodBuzz to your hearts content!
+    p Have an account? Log in to Food Feed!
 
     if error
         p=error
 
+    //form(name='login', action='/home/' + username , method='post')
     form(name='login', action='/login', method='post')
         input(type='text', placeholder='Username', name='username')
         br

@@ -13,9 +13,11 @@ router.get('/', function(req,res){
     "Try again."})
 });
 
-router.post('/', function(req,res){
+router.post('/', function(req,res, next){
     var username = req.body.username;
     var password = req.body.password;
+
+    console.log("Ready to log in");
 
     passport.authenticate('local', function(err, user, info){
        if (err){
@@ -24,7 +26,7 @@ router.post('/', function(req,res){
         if (!user){
             return res.redirect('/login/error?');
         } else{
-            return res.redirect('/posting');
+            return res.redirect('/home/' + user.username);
         }
     })(req,res,next);
 });
