@@ -5,7 +5,17 @@ block content
   p Welcome to #{title}
 
 
-  // create: a(href = '/posting/')
-  a(href = '/posting') Post a Review!
+  if isUser
+    a(href = '/posting') Post a Review!
+      br
+      br
+    a(href ='/logout') Logout
+
+  else
+    a(href='/register') Register
+    br
+    br
+
+    a(href='/login') Login
 
 

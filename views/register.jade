@@ -1,0 +1,35 @@
+extend layout
+
+block content
+
+    h1 #{title}
+
+    if error
+        p=error
+
+    p Have an account already?
+    a(href='/login') Login!
+
+    br
+    br
+
+    p Registration form
+    div
+        form(name='register', action='/register', method='post', enctype= 'multipart/form-data')
+            input(type='text', placeholder='Username', name='username')
+            br
+            input(type='text', placeholder='Email', name='email')
+            br
+            input(type='password', placeholder='Password', name='password')
+            br
+            p Upload a avatar for your profile
+            br
+            input(type='file', name='avatar')
+            br
+            br
+            input(type='submit', value='Register')
+    br
+    br
+    br
+    br
+    a(href='/') Home

@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    h1 #{title}
+
+    p Don't have an account yet? What're you waiting for?
+    a(href='/register') Register!
+
+    br
+    br
+    p Have an account? Log in to FoodBuzz to your hearts content!
+
+    if error
+        p=error
+
+    form(name='login', action='/login', method='post')
+        input(type='text', placeholder='Username', name='username')
+        br
+        input(type='text', placeholder='Password', name='password')
+        br
+        input(type='submit', value='Submit')
+
+    br
+    br
+    br
+    br
+    br
+    a(href='/') Home
+
+
+
