@@ -20,6 +20,9 @@ c/http_client
 *.war
 *.ear
 
+#node_modules
+node_modules/
+
 # IntelliJ stuff
 *.iml
 *.xml
