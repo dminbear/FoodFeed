@@ -10,7 +10,7 @@ block content
     // photo: String
     // rating: Number
     // review: String
-    // owner: String
+    // owner: String, which should be implicit when logged in.
     div.postbox
         form(name="posting", action='/post', method="post", enctype="multipart/form-data")
             input(type="text", placeholder="Location name", name="locationname")
@@ -29,14 +29,5 @@ block content
             input(type="file", name="photo")
             input(type="submit", value ='Submit')
 
-
-//block content
-//    .row.column.text-center
-//        h1=title
-//        .row.small-up-2.large-up-4
-//            p Post
-//            div.postbox
-//                form(name='posting', action='/posting', method='post', enctype="multipart/form-data")
-//                    input(type='text', placeholder='Location', name='locationname')
 
 
