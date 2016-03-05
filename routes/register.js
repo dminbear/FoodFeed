@@ -57,7 +57,7 @@ router.post('/', upload.single('avatar'), function(req,res,next){
            console.log("Unable to save new user in the database");
            console.log(err);
        } else{
-           return res.redirect('/');
+           return res.redirect('/login');
        }
     });
 
