@@ -11,6 +11,14 @@ router.get('/', function(req, res){
     res.render('registerSelect', {title: 'Register'});
 });
 
+router.get('/register-restaurant', function(req, res) {
+    res.render('register', {title: 'Register'});
+})
+
+router.get('/register-foodster', function(req, res) {
+    res.render('register', {title: 'Register'});
+})
+
 //error
 router.get('/error?', function(req,res){
    return res.render('register', {title: 'Register', error: 'Error! ' +
