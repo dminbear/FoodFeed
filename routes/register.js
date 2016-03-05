@@ -8,7 +8,7 @@ var upload = multer();
 
 // get request for register
 router.get('/', function(req, res){
-    res.render('register', {title: 'Register'});
+    res.render('registerSelect', {title: 'Register'});
 });
 
 //error

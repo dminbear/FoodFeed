@@ -37,6 +37,7 @@ hr {
 .container {
 	width: 1200px;
 	margin: 0 auto;
+	padding: 5em 5em 5em 5em;
 }
 ul.grid-nav {
 	list-style: none;
