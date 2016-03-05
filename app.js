@@ -4,11 +4,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var passport = require('passport');
+var LocalStrategy = require('passport-local');
 var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var posting = require('./routes/posting');
+var register = require('./routes/register');
+var login = require('./routes/login');
 
 var app = express();
 var router = express.Router();
@@ -33,13 +37,42 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(passport.initialize());
 app.use(router);
+passport.use(new LocalStrategy(function(username, password, done){
+    user.userModel.findOne({username: username}, function(err, obj){
+        if (err){
+            return done(err);
+        }
+        if (!obj){
+            return done(null, false, {message: 'Username not found'});
+        } if (obj.password != password){
+            return done(null, false, {message: "Password incorrect"});
+        }
+        return done(null, obj);
+    });
+}));
+
 
 app.use('/', routes);
 app.use('/users', users);
 app.use('/posting', posting);
+app.use('/register', register);
+app.use('/login', login);
 
+// logging out
+app.get('/logout', function(req,res){
+    req.logout();
+    res.redirect('/');
+
+});
+
+app.use(function(req,res,next){
+   if (req.user !=undefined){
+       res.locals.isUser = true;
+       res.locals.username = req.user.username;
+   } next();
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
