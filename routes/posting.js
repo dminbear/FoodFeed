@@ -1,11 +1,10 @@
-/**
- * Created by BearButt on 2016-03-04.
- */
 var express = require('express');
 var foodPost = require('../models/FoodPost');
+// eventually, we need
+// var user = require('../models/User');
 
 var router = express.Router();
-var multer = require('multer');
+var multer  = require('multer');
 var upload = multer();
 
 
@@ -33,15 +32,20 @@ router.post('/', upload.fields([{name: 'photo'}, {name: 'foodPost'}]), function(
         var photo = '';
     }
     // var owner = req.user.username;
-    var owner = "OwnerBob";
+    var owner = "OwnerBob"; // dummy owner for now
     var createdPost = foodPost.FoodPost(datetime, locationname, 0,0, photo, rating, 0, review, [], owner).getInstance();
     createdPost.save(function(err, data){
         if (err){
             console.log(err + "Post is not posting!");
         } else{
-            return res.redirect('/post/' + username);
+            // return res.redirect('/posted/' + username);
+            console.log('Posted!');
+            return res.redirect('/'); // let's see if re-direction is successful
         }
     });
 });
+
+// get post username page to see the review
+
 
 module.exports = router;

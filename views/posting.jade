@@ -1,8 +1,35 @@
 extends layout
 
 block content
-    h1= "Food Buzz"
-    p Welcome to #{title}
+    .row.column.text-center
+    h1= "Post a Review!"
+    .row.small-up-2.large-up-4
+
+    // post a post
+    // locationname: String
+    // photo: String
+    // rating: Number
+    // review: String
+    // owner: String
+    div.postbox
+        form(name="posting", action='/post', method="post", enctype="multipart/form-data")
+            input(type="text", placeholder="Location name", name="locationname")
+            br
+            input(type="text", placeholder="Your Review", name="review")
+            br
+            p Select a rating from 0 to 5
+            select(name="rating")
+                option(value=5) 5
+                option(value=4) 4
+                option(value=3) 3
+                option(value=2) 2
+                option(value=1) 1
+                option(value=0) 0
+            p Please upload a picture of the food!
+            input(type="file", name="photo")
+            input(type="submit", value ='Submit')
+
+
 //block content
 //    .row.column.text-center
 //        h1=title
