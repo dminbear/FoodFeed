@@ -8,7 +8,7 @@ router.get('/', function(req, res){
     res.render('login', {title: 'Login'});
 });
 
-router.get('/', function(req,res){
+router.get('/error', function(req,res){
     res.render('login', {title: 'Login', error: "Error! " +
     "Try again."})
 });

@@ -26,8 +26,7 @@ var FoodPost = (function () {
         this._comments = _comments;
         this._owner = _owner;
         this._modelInstance = new exports.foodpostModel({datetime: this._datetime, locationname: this._locationname, lat: this._lat, long: this._long, photo: this._photo, rating: this._rating, upvotes: this._upvotes, review: this._review, comments: this._comments, owner: this._owner});
-    }
-    ;
+    };
     FoodPost.prototype.getInstance = function () {
         return this._modelInstance;
     };
