@@ -17,7 +17,7 @@ var login = require('./routes/login');
 var app = express();
 var router = express.Router();
 
-mongoose.connect("mongodb://team15bizhacks:team15isawesome@ds053668.mlab.com:53668/team15bizhacks", function(obj, err){
+mongoose.connect("mongodb://team15Bizhacks:team15isawesome@ds053668.mlab.com:53668/team15bizhacks", function(obj, err){
     if (!err){
         console.log("Connected");
     }else {

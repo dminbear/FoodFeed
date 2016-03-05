@@ -11,23 +11,22 @@ block content
     // rating: Number
     // review: String
     // owner: String, which should be implicit when logged in.
-    div.postbox
-        form(name="posting", action='/post', method="post", enctype="multipart/form-data")
-            input(type="text", placeholder="Location name", name="locationname")
-            br
-            input(type="text", placeholder="Your Review", name="review")
-            br
-            p Select a rating from 0 to 5
-            select(name="rating")
-                option(value=5) 5
-                option(value=4) 4
-                option(value=3) 3
-                option(value=2) 2
-                option(value=1) 1
-                option(value=0) 0
-            p Please upload a picture of the food!
-            input(type="file", name="photo")
-            input(type="submit", value ='Submit')
+    form(name="posting", action='/', method="post", enctype="multipart/form-data")
+        input(type="text", placeholder="Location name", name="locationname")
+        br
+        input(type="text", placeholder="Your Review", name="review")
+        br
+        p Select a rating from 0 to 5
+        select(name="rating")
+            option(value=5) 5
+            option(value=4) 4
+            option(value=3) 3
+            option(value=2) 2
+            option(value=1) 1
+            option(value=0) 0
+        p Please upload a picture of the food!
+        input(type="file", name="photo")
+        input(type="submit", value ='Submit')
 
 
 

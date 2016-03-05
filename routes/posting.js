@@ -20,6 +20,7 @@ router.get('/', function(req, res){
 // review: String
 // owner: String
 router.post('/', upload.fields([{name: 'photo'}, {name: 'foodPost'}]), function(req,res){
+    console.log("Got here");
     var datetime = new Date();
     var locationname = req.body.locationname;
     var review = req.body.review;
@@ -40,9 +41,13 @@ router.post('/', upload.fields([{name: 'photo'}, {name: 'foodPost'}]), function(
         } else{
             // return res.redirect('/posted/' + username);
             console.log('Posted!');
-            return res.redirect('/'); // let's see if re-direction is successful
+            return res.redirect('/index'); // let's see if re-direction is successful
         }
     });
+});
+
+router.get('/posts', function(req,res){
+    res.render('Posts', {title: 'posts'});
 });
 
 // get post username page to see the review
