@@ -69,3 +69,15 @@ __MACOSX/
 .Spotlight-V100
 .Trashes
 Eipe.java
+
+.DS_Store
+
+
+.idea/.name
+.idea/bizhacks.iml
+.idea/copyright/profiles_setting.xml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/typescript-compiler.xml
+.idea/workspace.xml

@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var posting = require('./routes/posting');
 
 var app = express();
 var router = express.Router();
@@ -19,8 +20,6 @@ mongoose.connect("mongodb://team15bizhacks:team15isawesome@ds053668.mlab.com:536
         console.log("Error! Not connected: " + err);
     }
 });
-
-
 
 
 // view engine setup
@@ -35,8 +34,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(router);
+
 app.use('/', routes);
 app.use('/users', users);
+app.use('/posting', posting);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
