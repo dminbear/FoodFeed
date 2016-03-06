@@ -41,7 +41,7 @@ router.post('/', upload.fields([{name: 'photo'}, {name: 'foodPost'}]), function(
         } else{
             // return res.redirect('/posted/' + username);
             console.log('Posted!');
-            return res.redirect('/index'); // let's see if re-direction is successful
+            return res.redirect('/'); // let's see if re-direction is successful
         }
     });
 });
