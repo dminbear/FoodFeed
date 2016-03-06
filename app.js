@@ -16,6 +16,8 @@ var posting = require('./routes/posting');
 var register = require('./routes/register');
 var login = require('./routes/login');
 var home = require('./routes/home');
+var feeds = require('./routes/feeds');
+
 
 
 var app = express();
@@ -64,6 +66,7 @@ app.use('/posting', posting);
 app.use('/register', register);
 app.use('/login', login);
 app.use('/home', home);
+app.use('/feeds', feeds);
 
 // logging out
 app.get('/logout', function(req,res){
@@ -72,12 +75,13 @@ app.get('/logout', function(req,res){
 
 });
 
-app.use(function(req,res,next){
-   if (req.user !=undefined){
-       res.locals.isUser = true;
-       res.locals.username = req.user.username;
-   } next();
-});
+// app.use(function(req,res,next){
+//    if (req.user !=undefined){
+//        res.locals.isUser = true;
+//        res.locals.username = req.user.username;
+//    } 
+//    next();
+// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
