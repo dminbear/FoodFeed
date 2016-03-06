@@ -5,11 +5,11 @@ var passport = require('passport');
 var app = require('../app');
 
 router.get('/', function(req, res){
-    res.render('login', {title: 'Login'});
+    res.render('logins', {title: 'Login'});
 });
 
 router.get('/error', function(req,res){
-    res.render('login', {title: 'Login', error: "Error! " +
+    res.render('logins', {title: 'Login', error: "Error! " +
     "Try again."})
 });
 

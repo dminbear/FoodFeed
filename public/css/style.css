@@ -126,6 +126,33 @@ ul.rig.columns-3 li {
 .rating-35 { background-position: -12px -16px; }
 .rating-45 { background-position: 0 -16px; }
 
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  background-image: url('https://i.ytimg.com/vi/euVyBKNfxkk/maxresdefault.jpg');
+  width: 1600px;
+  height: 1200px;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 
 @media (max-width: 1199px) {
 	.container {

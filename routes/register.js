@@ -12,11 +12,11 @@ router.get('/', function(req, res){
 });
 
 router.get('/register-restaurant', function(req, res) {
-    res.render('register', {title: 'Register'});
+    res.render('registerRester', {title: 'Register'});
 })
 
 router.get('/register-foodster', function(req, res) {
-    res.render('register', {title: 'Register'});
+    res.render('registerFoodster', {title: 'Register'});
 })
 
 //error

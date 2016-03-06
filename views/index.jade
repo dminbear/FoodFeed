@@ -1,6 +1,6 @@
 html
   head
-    title Food Feed
+    title #title
     link(href='http://fonts.googleapis.com/css?family=Oswald', rel='stylesheet', type='text/css')
     link(rel='stylesheet', type='text/css', href='../css/style.css')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7', crossorigin='anonymous')
@@ -13,10 +13,10 @@ html
         div(style='position: relative; top: -1.3em; left: 0.25em; display: inline-block;')
           button.btn.btn-primary(type='button', style='font-size: 24px;', onclick='location.href="/login"') Login
         div(style='position: relative; top: -0.5em; left: 22em; display: inline-block;')
-          form.top_search(action='/search/query', method='GET')
+          form.top_search(action='/', method='GET')
             div(style='display: inline-block;')
               input.form-control.input-lg(style='display: inline-block', type='text', placeholder='Search', name='terms')
-            button.btn.btn-default(style='font-size: 32px; position: relative; top: -0.1em', type='submit')
+            button.btn.btn-default(style='font-size: 32px; position: relative; top: -0.1em')
               span.glyphicon.glyphicon-search
         div(style='padding-top: 4em')
           h2(style='display: inline-block;') Foodster's Choice 
@@ -47,7 +47,7 @@ html
                 div(style='width: 2em; height: 2em; display: inline-block;')
                   img(style='display: inline-block; top: -1em', src='../images/trophy-with-a-star-bigger.svg')
               span.rating-static.rating-40
-          button.btn.btn-success(type='button', style='font-size: 22px;') See more...
+          button.btn.btn-success(type='button', style='font-size: 22px;' onclick='location.href="/login"') See more...
           .span9(style='height: 4em')
           h2(style='display: inline-block;') Restaurant Posts 
           div(style='width: 3em; height: 3em; display: inline-block;')
@@ -77,7 +77,7 @@ html
                 div(style='width: 3em; height: 3em; display: inline-block;')
                   img(style='padding-bottom: 0.75em; padding-left: 0.5em', src='../images/restaurant-signal.svg')
               span.rating-static.rating-40
-          button.btn.btn-success(type='button', style='font-size: 22px;') See more...
+          button.btn.btn-success(type='button', style='font-size: 22px;' onclick='location.href="/login"') See more...
       // /.container
     // /.wrapper
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', type='text/javascript')
