@@ -5,4 +5,4 @@ See what your friends are eating you bloody stalker
 
 
 
-![Demo](http://ec2-54-213-123-63.us-west-2.compute.amazonaws.com:3000/)
+[Demo](http://ec2-54-213-123-63.us-west-2.compute.amazonaws.com:3000/)
